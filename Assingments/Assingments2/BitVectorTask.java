@@ -2,7 +2,7 @@ package Assingments.Assingments2;
 
 public class BitVectorTask {
 
-	public static boolean checkCharacter(String a,String b){
+	/*public static boolean checkCharacter(String a,String b){
 
 		for(char c:a.toCharArray()){
 			//(c-'a') let suppose c=z then(z-a) it gives 25 , 1<<25 it shifts bits to left
@@ -17,9 +17,29 @@ public class BitVectorTask {
 			//System.out.println(c+"......"+charBitVector);
 		}
 		return true;
+	}*/
+	
+	public static boolean checkCharacter1(String a,String b){
+
+		int charBitVector=0;
+		for(char c:a.toCharArray())
+		{
+			//(c-'a') let suppose c=z then(z-a) it gives 25 , 1<<25 it shifts bits to left
+			// if we put 'A' instead of 'a' then (z-A) which gives 1<<57 which may shift bits above then 32 bits
+			charBitVector|=1<<(c-'a');
+		}
+		
+			for(char d:b.toCharArray())
+			{
+				int charBitVect=1<<(d-'a');
+				if((charBitVector&charBitVect)>0)
+					System.out.println("same character : "+d);
+			}
+		
+		return true;
 	}
 
-public static boolean isUnique(String input) {
+/*public static boolean isUnique(String input) {
 
 		if(input.length() > 26 )
 			return false;
@@ -32,11 +52,11 @@ public static boolean isUnique(String input) {
 			checker = checker | charBitVector;
 		}
 		return true;
-	}
+	}*/
 	public static void main(String arg[]){
 		String a="sunilkumar";
 		String b="kirshan";
-		checkCharacter(a,b);
-		//System.out.println(isUnique(b));
+		checkCharacter1(a,b);
+		
 	}
 }
