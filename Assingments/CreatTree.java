@@ -5,12 +5,12 @@ import java.util.Scanner;
 public class CreatTree {
 
 	static Scanner sc=null;
-	public static Node createTree(){
-		Node root=null;
+	public static NodeA createTree(){
+		NodeA root=null;
 		System.out.println("Enter data : ");
 		int data=sc.nextInt();
 		if(data==-1)return null;
-		root=new Node(data);
+		root=new NodeA(data);
 
 		System.out.println("Enter left for : "+data);
 		root.left=createTree();
