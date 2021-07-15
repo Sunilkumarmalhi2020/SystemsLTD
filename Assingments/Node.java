@@ -1,16 +1,9 @@
-package Assingments;
-
-import java.util.LinkedList;
+package BinaryTree;
 
 public class Node {
-
+	Node right,left;
 	int data;
-	Node next;
-	public Node(){}
 	public Node(int data){
 		this.data=data;
-		this.next=null;
 	}
-
-	
 }
